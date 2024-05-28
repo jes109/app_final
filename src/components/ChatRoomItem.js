@@ -4,24 +4,19 @@ import { Box, Image, View, Text, Pressable } from "@gluestack-ui/themed";
 import { useNavigation, useTheme } from '@react-navigation/native';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
-import ChatRoomScreen from "../screens/ChatRoomScreen";
-
-export default ChatItem =({chat})=>{
+export default ChatRoomItem =({chat})=>{
     const {navigate} = useNavigation();
     const {colors}=useTheme();
     return(
-    <TouchableOpacity 
-        activeOpacity={0.6}
-        onPress={() => navigate('ChatRoom')}
-    >
+    <Pressable>
         <View style={styles.card}>
             <MaterialCommunityIcons name="account-circle" size={56}/>
             <View style={styles.text}>
-                <Text style={styles.title}  color={colors.primary800}>{chat.title}</Text>
+                <Text style={styles.user}  color={colors.primary800}>{chat.user}</Text>
                 <Text style={styles.message} color={colors.primary500}>{chat.message}</Text>
             </View>
         </View>
-    </TouchableOpacity>
+    </Pressable>
     );
 }
 
@@ -32,17 +27,19 @@ const styles=StyleSheet.create(
             width: 50,
             marginLeft: 15
         },
-        title: {
-            fontSize: 18
+        user: {
+            fontSize: 12
         },
         message: {
             fontSize: 16,
-            color: "gray"
+            color: "black"
         },
         card: {
             flexDirection: "row",
             alignItems: "center",
-            paddingVertical: 15
+            paddingVertical: 30,
+            paddingRight: 50,
+            paddingLeft: 5
         },
         text: {
             marginLeft: 20,

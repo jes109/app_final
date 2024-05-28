@@ -10,13 +10,13 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from "@react-navigation/drawer";
 
-import ChatScreen from "../screens/ChatScreen";
-import ChatDetailScreen from "../screens/ChatDetailScreen";
 import ChatRoomScreen from "../screens/ChatRoomScreen";
+import ChatRoomDetailScreen from "../screens/ChatRoomDetailScreen";
+import ChatMapScreen from "../screens/ChatMapScreen";
 
 const Stack = createStackNavigator();
 
-export default ChatStack = ({navigation}) => {
+export default ChatRoomStack = ({navigation}) => {
     //const {navigation} = useNavigation();
     const {colors}=useTheme();
 
@@ -30,15 +30,12 @@ export default ChatStack = ({navigation}) => {
             }
         }}
         >
-            <Stack.Screen name="Chat" component={ChatScreen} 
+            <Stack.Screen name="ChatRoom" component={ChatRoomScreen} 
             options={{
-                title: "聊天室",
+                title: "巧連智",
                 headerRight: () => (
                     <View style={styles.headerStyle}>
                         <View style={styles.icons}>
-                            <Pressable style={{marginRight: 8}}>
-                            <MaterialIcons name="group" size={28} color={colors.primary800}/>
-                            </Pressable>
                             <Pressable>
                             <MaterialCommunityIcons name="square-edit-outline" size={28} color={colors.primary800}/>
                             </Pressable>
@@ -47,7 +44,7 @@ export default ChatStack = ({navigation}) => {
                 )
             }}
             />
-            <Stack.Screen name="ChatRoom" component={ChatRoomScreen} 
+            <Stack.Screen name="ChatMap" component={ChatMapScreen} 
             
             />
         </Stack.Navigator>

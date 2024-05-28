@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native"
 import BottomTab from "../Navigation/BottomTab"
 import LoginScreen from "../screens/LoginScreen"
 
-import MyTheme from "../Theme/dark"
+import MyTheme from "../Theme/light"
 import { KeyboardAvoidingView } from "@gluestack-ui/themed";
 import { Platform } from "react-native";
 import { useSelector } from "react-redux";
