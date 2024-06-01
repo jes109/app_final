@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet } from "react-native";
 import { View, Pressable, Image } from "@gluestack-ui/themed";
-import {useTheme } from "@react-navigation/native";
+import { useTheme } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { useNavigationContext } from "./NavigationContext";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -23,16 +23,20 @@ export default ChatRoomStack = ({navigation}) => {
     return(
         <Stack.Navigator
         screenOptions={{
-            headerStyle:{ backgroundColor: "#F6F7E3"},
+            headerStyle:{ backgroundColor:colors.header},
             headerTitleStyle:{
-                color: "#194200",
-                fontSize: 20
+                color:colors.primary800,
+                fontSize:20
             }
         }}
         >
             <Stack.Screen name="ChatRoom" component={ChatRoomScreen} 
             options={{
-                title: "巧連智",
+                title: "賞鳥同好關渡一日遊",
+                headerLeft:()=>(
+                    <Pressable pl={12}>
+                        <AntDesign name="left" size={24} color={colors.primary800} onPress={()=>navigate("Chat")} /> 
+                    </Pressable>),
                 headerRight: () => (
                     <View style={styles.headerStyle}>
                         <View style={styles.icons}>

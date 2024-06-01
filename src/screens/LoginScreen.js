@@ -37,7 +37,7 @@ import { TouchableOpacity } from "react-native";
         <Box bg="#EDF2E7" flex={1}>
             <Center mt={120} >
             <Image source={"https://github.com/jes109/App_midterm/blob/master/src/img/logo.png?raw=true"} alt="logo" w={120} resizeMode="contain"/>
-            <Text py={12} fontSize={40} color="#194200">Sign in</Text>
+            <Text py={12} fontSize={40} color="#194200">登入</Text>
             </Center>
         <VStack gap={20} space={2} mt={20} px={28} py={40} alignSelf="center" bg="#E0F2BB" rounded="$3xl" >
             <FormControl mb={5} isRequired w={280}>
@@ -46,7 +46,7 @@ import { TouchableOpacity } from "react-native";
                 <AntDesign name="mail" size={24} color="#194200"/>
                 </InputSlot>
                     <InputField 
-                    placeholder="input your email"
+                    placeholder="電子郵件"
                     value={email}
                     onChangeText={(email)=>{setEmail(email)
                     }}
@@ -54,7 +54,7 @@ import { TouchableOpacity } from "react-native";
                 </Input>
                 <FormControlError isInvalid={emailIsError}>
                     <FormControlErrorIcon as={AlertCircleIcon}/> 
-                    <FormControlErrorText>You are wrong!</FormControlErrorText>
+                    <FormControlErrorText>輸入格式有誤</FormControlErrorText>
                 </FormControlError>
             </FormControl>
             <FormControl mb={5} isRequired w={280}>
@@ -63,7 +63,7 @@ import { TouchableOpacity } from "react-native";
                 <AntDesign name="lock1" size={24} color="#194200"/>
                 </InputSlot>
                     <InputField 
-                    placeholder="input your password"
+                    placeholder="密碼"
                     value={name}
                     onChangeText={(name)=>{
                         setName(name)
@@ -72,15 +72,15 @@ import { TouchableOpacity } from "react-native";
                 </Input>
                 <FormControlError isInvalid={nameIsError}>
                     <FormControlErrorIcon as={AlertCircleIcon}/> 
-                    <FormControlErrorText>You are wrong!</FormControlErrorText>
+                    <FormControlErrorText>輸入格式有誤</FormControlErrorText>
                 </FormControlError>
             </FormControl>
             <TouchableOpacity onPress={()=>{if(!nameIsError && !emailIsError)dispatch(login())}}>
                 <Box w="$full" py={8} rounded="$full" bg="#194200" >
-                <Text color="#fff" size="2xl" textAlign="center">Sign in</Text>
+                <Text color="#fff" size="2xl" textAlign="center">登入</Text>
                 </Box>
             </TouchableOpacity>
-            <Text color="#707769" >Don't have an account? <Text  underline="true"  ml={8} bold="true" color="#FFC700">SIGN UP</Text></Text>
+            <Text color="#707769" >還沒有帳號? <Text  underline="true"  ml={8} bold="true" color="#FFC700">點我註冊</Text></Text>
         </VStack>
         </Box>
     )

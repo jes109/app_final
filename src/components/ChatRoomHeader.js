@@ -8,7 +8,7 @@ const ChatRoomHeader = () => {
 
   return (
     <View style={styles.headerStyle}>
-        <Text style={styles.textStyle}>巧連智</Text>
+        <Text style={styles.textStyle}>賞鳥同好關渡一日遊</Text>
         <View style={styles.icons}>
             <Pressable style={{marginRight: 10}}>
                 <Image 

@@ -10,7 +10,7 @@ export default ChatRoomItem =({chat})=>{
     return(
     <Pressable>
         <View style={styles.card}>
-            <MaterialCommunityIcons name="account-circle" size={56}/>
+            <MaterialCommunityIcons name="account-circle" size={45}/>
             <View style={styles.text}>
                 <Text style={styles.user}  color={colors.primary800}>{chat.user}</Text>
                 <Text style={styles.message} color={colors.primary500}>{chat.message}</Text>
@@ -37,7 +37,7 @@ const styles=StyleSheet.create(
         card: {
             flexDirection: "row",
             alignItems: "center",
-            paddingVertical: 30,
+            paddingVertical: 20,
             paddingRight: 50,
             paddingLeft: 5
         },

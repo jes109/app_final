@@ -12,7 +12,7 @@ export default ChatRoomScreen = ({navigation}) => {
     return(
             <ScrollView bg={colors.card} flex={1}>
                 <Center>
-                    <ChatRoomList/>
+                    <ChatRoomList />
                 </Center>
             </ScrollView>
     )

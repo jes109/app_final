@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { HStack, VStack } from "@gluestack-ui/themed";
+import { HStack, VStack, useColorMode, Center, Box, Text, Pressable, Actionsheet, ActionsheetBackdrop, ActionsheetContent, ActionsheetItem, ActionsheetItemText } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
-import { StyleSheet, TouchableOpacity } from "react-native";
-import { Switch, Button, Box, View, Pressable, Image, Text, Center, Actionsheet, ActionsheetBackdrop, ActionsheetContent, ActionsheetItem, ActionsheetItemText, GluestackUIProvider } from "@gluestack-ui/themed";
+import { StyleSheet, TouchableOpacity, View} from "react-native";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import { useSelector,useDispatch } from "react-redux";
 import {selectLogin,logout} from "../redux/accountSlice"
@@ -31,11 +30,7 @@ export default SettingDetail = () =>{
     };
     //const {goBack} =useNavigation();
     const {colors} = useTheme();
-    const [colorMode, setColorMode] = useState("white");
-    const toggleColorMode = () => {
-        if(colorMode == "white") setColorMode("black");
-        else setColorMode("white");
-    };
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return(
             <View>
@@ -74,9 +69,9 @@ export default SettingDetail = () =>{
                     <View style={styles.btnup}>
                         <Box style={styles.btnleft} bg={colors.primary200}>
                             <Pressable>
-                            <MaterialCommunityIcons name="bookmark-outline" size={40} color={colors.primary800}/>
+                            <MaterialCommunityIcons name="cog" size={40} color={colors.primary800}/>
                             </Pressable>
-                            <Text style={styles.word}>我的收藏</Text>
+                            <Text style={styles.word}>設定</Text>
                         </Box>
                         <Box style={styles.btnright} bg={colors.primary200}>
                             <Pressable>
@@ -100,12 +95,17 @@ export default SettingDetail = () =>{
                         </Box>
                     </View>
                 </View>
+
+                <Center>
+                    <Text style={styles.switch}>(按圖片切換模式)</Text>
+                </Center>
+
                 <Box>
                     <Center>
                         <View>
                             <TouchableOpacity onPress={handleClose}>
-                                <Box style={styles.logout} bg={colors.primary800}>
-                                    <Text style={styles.logoutword}>Log Out</Text>
+                                <Box style={styles.logout} bg={colors.primary200}>
+                                    <Text style={styles.logoutword}>登出</Text>
                                 </Box>
                             </TouchableOpacity>
                         </View>
@@ -118,7 +118,7 @@ export default SettingDetail = () =>{
                             <Center>
                                 <ActionsheetItem onPress={close}>
                                     <Center>
-                                        <ActionsheetItemText style={styles.item}><Text style={styles.yes}>Yes</Text></ActionsheetItemText>
+                                        <ActionsheetItemText style={styles.item}><Text style={styles.yes}>是</Text></ActionsheetItemText>
                                     </Center>
                                 </ActionsheetItem>
                             </Center>
@@ -126,7 +126,7 @@ export default SettingDetail = () =>{
                             <Center>
                                 <ActionsheetItem onPress={handleClose}>
                                     <Center>
-                                        <ActionsheetItemText style={styles.item}><Text style={styles.cancel}>Cancel</Text></ActionsheetItemText>
+                                        <ActionsheetItemText style={styles.item}><Text style={styles.cancel}>取消</Text></ActionsheetItemText>
                                     </Center>
                                 </ActionsheetItem>
                             </Center>
@@ -140,6 +140,10 @@ export default SettingDetail = () =>{
 
 const styles=StyleSheet.create(
     {
+        switch: {
+            color: "green",
+            marginTop: 30
+        },
         item: {
             alignSelf: "center"
         },
@@ -182,10 +186,10 @@ const styles=StyleSheet.create(
             //justifyContent: "center",
             //alignItems: "center",
             textAlign: "center",
-            color: 'white'
+            color: 'red'
         },
         word: {
-            marginLeft: 8,
+            marginLeft: 25,
             marginRight: 8,
             fontSize: 16
         },
