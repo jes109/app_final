@@ -69,8 +69,8 @@ export default () =>{
             />
             <Tab.Screen name="setting" component={SettingStack} 
              options={{
-                title:"設定",
-                tabBarIcon:({color})=>( <AntDesign name='setting' color={color} size={26}/>)
+                title:"個人",
+                tabBarIcon:({color})=>( <AntDesign name='user' color={color} size={26}/>)
             }}
             />
         </Tab.Navigator>

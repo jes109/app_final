@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 import { View, Pressable, Image } from "@gluestack-ui/themed";
 import {useTheme } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
-import { useNavigationContext } from "./NavigationContext";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { NavigationContainer } from '@react-navigation/native';
