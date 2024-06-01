@@ -11,6 +11,7 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerI
 
 import ChatScreen from "../screens/ChatScreen";
 import ChatDetailScreen from "../screens/ChatDetailScreen";
+import ChatRoomScreen from "../screens/ChatRoomScreen";
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,9 @@ export default ChatStack = ({navigation}) => {
                     </View>
                 )
             }}
+            />
+            <Stack.Screen name="ChatRoom" component={ChatRoomScreen} 
+            
             />
         </Stack.Navigator>
     )

@@ -4,11 +4,16 @@ import { Box, Image, View, Text, Pressable } from "@gluestack-ui/themed";
 import { useNavigation, useTheme } from '@react-navigation/native';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
+import ChatRoomScreen from "../screens/ChatRoomScreen";
+
 export default ChatItem =({chat})=>{
     const {navigate} = useNavigation();
     const {colors}=useTheme();
     return(
-    <TouchableOpacity activeOpacity={0.6}>
+    <TouchableOpacity 
+        activeOpacity={0.6}
+        onPress={() => navigate('ChatRoom')}
+    >
         <View style={styles.card}>
             <MaterialCommunityIcons name="account-circle" size={56}/>
             <View style={styles.text}>
